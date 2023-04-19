@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisma's Commission Form</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Commission Form</h1>
+        <p>Please make sure your read and understand my <a href="https://prismasinclair.carrd.co/#terms">TOS</a> and <a
+                href="https://prismasinclair.carrd.co/#commission">Prices</a> before
+            submitting!</p>
+        <p>Reference art is required. Proper concept art will give you a better chance at having your commission
+            accepted. Ideal concept art would be a full front view of your character, along with a side and back view.
+            If you have a live 2d model, be sure to apply with that!</p>
+        <form form id="commission-form" enctype="multipart/form-data"
+            onsubmit="return validateForm()">
+            <label>Will you use this model for streaming?</label><br>
+            <input type="radio" name="use-for-streaming" value="yes" id="use-for-streaming-yes"
+                onclick="toggleStreamingOptions(true)"> Yes
+            <input type="radio" name="use-for-streaming" value="no" id="use-for-streaming-no"
+                onclick="toggleStreamingOptions(false)"> No<br>
+
+            <div id="streaming-options" style="display:none;">
+                <label>Select all that apply:</label><br>
+                <input type="checkbox" name="stream_platforms" value="twitch" id="twitch"> Twitch<br>
+                <input type="checkbox" name="stream_platforms" value="youtube" id="youtube"> YouTube<br>
+                <input type="checkbox" name="stream_platforms" value="other" id="other" onclick="toggleOtherOption()">
+                Other<br>
+                <input type="text" name="twitch-username" id="twitch-username" placeholder="Twitch username"
+                    style="display:none;"><br>
+                <input type="text" name="youtube-username" id="youtube-username" placeholder="YouTube username"
+                    style="display:none;"><br>
+                <input type="text" name="other-platform" id="other-platform" placeholder="Other platform"
+                    style="display:none;">
+
+                <!-- ... -->
+            </div><br>
+            <div id="non-streaming-purpose" style="display:none;">
+                <label for="non-streaming-purpose">What are your plans for this model?</label><br>
+                <textarea name="non-streaming-purpose" id="non-streaming-purpose" rows="4"></textarea><br>
+            </div>
+            <label>What other social media and/or content creation sites do you use?</label><br>
+            <input type="checkbox" name="social-media" value="twitter" id="twitter"> Twitter<br>
+            <input type="checkbox" name="social-media" value="youtube" id="youtube2"> YouTube<br>
+            <input type="checkbox" name="social-media" value="instagram" id="instagram"> Instagram<br>
+            <input type="checkbox" name="social-media" value="tiktok" id="tiktok"> Tiktok<br>
+            <input type="checkbox" name="social-media" value="other" id="other-social-media"
+                onclick="toggleOtherSocialMedia()"> Other<br>
+            <input type="text" name="twitter-username" id="twitter-username" placeholder="Twitter username"
+                style="display:none;"><br>
+            <input type="text" name="youtube-username2" id="youtube-username2" placeholder="YouTube username"
+                style="display:none;"><br>
+            <input type="text" name="instagram-username" id="instagram-username" placeholder="Instagram username"
+                style="display:none;"><br>
+            <input type="text" name="tiktok-username" id="tiktok-username" placeholder="Tiktok username"
+                style="display:none;"><br>
+            <input type="text" name="other-social-media" id="other-social-media-input" placeholder="Other social media"
+                style="display:none;"><br>
+
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="Email" required
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"><br>
+
+                <label for="discord">Discord</label>
+                <input type="text" name="discord" id="discord" placeholder="DiscordName#1234" required
+                    pattern="^[a-zA-Z0-9]{2,32}#[0-9]{4}$"><br>
+                
+
+            <label>The model comes with 5 basic facial expressions (Joy, Angry, Sorrow, Fun, Surprised). Do you want to
+                substitute one of these for a different type of expression?</label><br>
+            <input type="radio" name="substitute-expression" value="yes" id="substitute-expression-yes"
+                onclick="toggleSubstituteExpression(true)"> Yes
+            <input type="radio" name="substitute-expression" value="no" id="substitute-expression-no"
+                onclick="toggleSubstituteExpression(false)"> No<br>
+            <textarea name="substitute-expression-details" id="substitute-expression-details"
+                placeholder="Please list which expression(s) you would like to substitute and what you would like instead."
+                style="display:none;"></textarea><br>
+
+            <label for="arkit">ARKit/iPhone Face Tracking Blendshapes?</label><br>
+            <input type="radio" name="arkit" value="yes" id="arkit-yes"> Yes
+            <input type="radio" name="arkit" value="no" id="arkit-no"> No<br>
+
+            <label for="vive">Vive Face Tracker Blendshapes?</label><br>
+            <input type="radio" name="vive" value="yes" id="vive-yes"> Yes
+            <input type="radio" name="vive" value="no" id="vive-no"> No<br>
+
+            <label>Extra outfit?</label><br>
+            <input type="radio" name="extra-outfit" value="yes" onclick="toggleExtraOutfit(true)"> Yes
+            <input type="radio" name="extra-outfit" value="no" onclick="toggleExtraOutfit(false)"> No<br>
+            <textarea name="extra-outfit-details" id="extra-outfit-details"
+                placeholder="Please explain the extra outfit." style="display:none;"></textarea><br>
+
+            <label>Extra Hairstyle?</label><br>
+            <input type="radio" name="extra-hairstyle" value="yes" onclick="toggleExtraHairstyle(true)"> Yes
+            <input type="radio" name="extra-hairstyle" value="no" onclick="toggleExtraHairstyle(false)"> No<br>
+            <textarea name="extra-hairstyle-details" id="extra-hairstyle-details"
+                placeholder="Please explain the extra hairstyle." style="display:none;"></textarea><br>
+
+            <label>Pet?</label><br>
+            <input type="radio" name="pet" value="yes" onclick="togglePet(true)"> Yes
+            <input type="radio" name="pet" value="no" onclick="togglePet(false)"> No<br>
+            <textarea name="pet-details" id="pet-details" placeholder="Please explain the pet."
+                style="display:none;"></textarea><br>
+
+            <label>Extra object or accessory? (example: a weapon)</label><br>
+            <input type="radio" name="extra-object" value="yes" onclick="toggleExtraObject(true)"> Yes
+            <input type="radio" name="extra-object" value="no" onclick="toggleExtraObject(false)"> No<br>
+            <textarea name="extra-object-details" id="extra-object-details"
+                placeholder="Please explain the extra object or accessory." style="display:none;"></textarea><br>
+
+            <label>Extra Facial Expression?</label><br>
+            <input type="radio" name="extra-expression" value="yes" onclick="toggleExtraExpression(true)"> Yes
+            <input type="radio" name="extra-expression" value="no" onclick="toggleExtraExpression(false)"> No<br>
+            <textarea name="extra-expression-details" id="extra-expression-details"
+                placeholder="Please explain the extra facial expression." style="display:none;"></textarea><br>
+                <label>Model Privacy</label>
+                <div class="radio-option">
+                  <input type="radio" name="model-privacy" value="not-private" id="not-private">
+                  <label for="not-private">Not Private - Prisma is free to stream and post WIP media while working on this commission. She will tag the commissioner in posts and have the commissioner's name on the screen while streaming the commission work.</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" name="model-privacy" value="semi-private" id="semi-private">
+                  <label for="semi-private">Semi-Private - Prisma is free to stream and post WIP media while working on this commission. HOWEVER, She will NOT tag the commissioner in posts and will NOT have the commissioner's name on the screen while streaming the commission work. She will NOT release who the commissioner is until the commissioner has debuted the commission work.</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" name="model-privacy" value="private" id="private-value">
+                  <label for="private-value">Private - Prisma will NOT stream and will NOT post WIP media while working on this commission. This option will add an extra $300 fee to the commission.</label>
+                </div>
+                <div class="checkbox-option" id="private-fee-container" style="display: none;">
+                    <input type="checkbox" name="accept-private-fee" value="accept" id="private-fee">
+                    <label for="private-fee" id="private-fee-label">I accept the extra $300 fee for my commission to be private until I debut.</label>
+                  </div>
+                  
+                
+
+                  <div class="form-group">
+                    <label class="question" for="reference-art">Reference Art</label>
+                    <p>Please upload as many images as you can! Feel free to write on the images if you need to explain or point out anything. The more information I have, the more I can stick to your vision and make you happy!</p>
+                    <label class="custom-file-upload">
+                      <input type="file" name="reference-art[]" id="reference-art" multiple style="display: none;">
+                      <button type="button" class="upload-btn" id="custom-file-btn">Choose Files</button>
+
+                    </label>
+                    <div id="selected-files"></div>
+                  </div>
+                  
+
+            <div class="form-group">
+                <label class="question" for="reference-art-notes">Anything you need to say or explain about your
+                    reference art?</label>
+                <textarea name="reference-art-notes" id="reference-art-notes" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="question" for="questions-or-concerns">Any questions or concerns?</label>
+                <textarea name="questions-or-concerns" id="questions-or-concerns" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="question">I have read and I understand Prisma's Terms of Service and Prisma's Commission
+                    Pricing & Info.</label>
+                <input type="radio" name="tos-acknowledgment" value="yes" id="tos-acknowledgment-yes" required> Yes
+                <input type="radio" name="tos-acknowledgment" value="no" id="tos-acknowledgment-no" required> No
+            </div>
+            <div class="form-group">
+                <label for="code-word">Code Word found in Prisma's <a
+                        href="https://prismasinclair.carrd.co/#terms">TOS</a>:</label>
+                <input type="text" name="code-word" id="code-word" required><br>
+            </div>
+            <input type="submit" value="Submit!">
+
+    </div>
+
+    </form>
+    </div>
+    <script src="Javascript/version.js"></script>
+    <script src="Javascript/main.js"></script>
+</body>
+
+</html>

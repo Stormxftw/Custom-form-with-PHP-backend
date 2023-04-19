@@ -1,0 +1,412 @@
+/* body {
+    font-family: 'Baloo 2', cursive;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to top left, #FFCC99, #CC99CC);
+    color: #222;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+title {
+    text-align: center;
+    font-family: 'Concert One', cursive;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Concert One', cursive;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    font-size: 1em;
+    color: #222;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #FF99CC;
+    color: #222;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+button[type="submit"]:hover {
+    background-color: #FF6699;
+}
+
+.question {
+    font-size: 1.1em;
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+input[type="submit"] {
+    width: 100%;
+    font-size: 1.5rem;
+    font-family: 'Baloo 2', cursive;
+    color: white;
+    background-color: #ff7ad5;
+    border: none;
+    padding: 15px 0;
+    margin: 20px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff9ee7;
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 14px;
+    }
+}
+
+.file-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.file-list li {
+    padding: 5px 0;
+}
+ */
+
+
+
+/* NEW CODE START*/
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic');
+
+/* Updated CSS */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(../Images/Stary.JPG);
+    /* Add the background image */
+    background-size: cover;
+    /* Scale the image to cover the entire background */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Do not repeat the background image */
+    color: #222;
+}
+
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 50px 20px;
+    background-color: rgba(255, 255, 255, 1);
+    /* Change to RGBA and set opacity to 0.9 */
+    text-align: center;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: #990066;
+    /* purple */
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #990066;
+    /* purple */
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1em;
+    color: #990066;
+    /* purple */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #222;
+    outline: none;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #cc3300;
+    /* red */
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+button[type="submit"]:hover {
+    background-color: #b32400;
+    /* darker red */
+}
+
+.question {
+    font-size: 1.3em;
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+input[type="submit"] {
+    width: 100%;
+    font-size: 1.5rem;
+    font-family: 'Roboto Slab', serif;
+    color: white;
+    background-color: #cc3300;
+    /* red */
+    border: none;
+    padding: 15px 0;
+    margin: 20px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #b32400;
+    /* darker red */
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 14px;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+.file-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.file-list li {
+    padding: 5px 0;
+}
+
+.radio-option,
+.checkbox-option {
+    margin: 10px 0;
+}
+
+.radio-option label,
+.checkbox-option label {
+    display: inline;
+    margin-left: 10px;
+    font-size: 1.1em;
+    line-height: 1.2;
+}
+
+label {
+    font-size: 1.3em;
+    /* Adjust the text size for section labels */
+}
+
+.radio-option label,
+.checkbox-option label {
+    font-size: 1em;
+    /* Adjust the text size for radio and checkbox options */
+}
+
+p {
+    font-size: 1.2em;
+    /* Adjust the text size for the paragraph */
+    color: #990066;
+    /* purple */
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.noticeable-checkbox {
+    font-weight: bold;
+    color: red;
+}
+
+.custom-file-upload {
+    position: relative;
+    display: inline-block;
+}
+
+.upload-btn {
+    padding: 10px 20px;
+    background-color: #FF99CC;
+    color: #222;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.upload-btn:hover {
+    background-color: #FF6699;
+}
+
+.file-name {
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 10px;
+    color: #4B0082;
+    /* Updated the color to be more visible */
+}
+
+
+.remove-btn {
+    display: inline-block;
+    background-color: #9f1f5c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: #7a1648;
+}
